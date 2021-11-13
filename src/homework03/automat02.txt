@@ -1,0 +1,10 @@
+a b
+q0 q3 q1 false
+q1 q6 q8 false
+q2 q7 q6 true
+q3 q4 q8 false
+q4 q4 q8 false
+q5 q4 q2 false
+q6 q7 q2 true
+q7 q1 q1 true
+q8 q2 q1 false
