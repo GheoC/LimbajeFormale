@@ -49,19 +49,23 @@ public class main {
         //se poate alege urmatoarele 3 fisiere: data.txt, data2.txt si data3.txt
         gramatica.inputData("data.txt");
         gramatica.displayData();
-        gramatica.checkData();
+
+        if (!gramatica.checkData())
+        {
+            System.out.println("\nTest failed on some test case. Please revisit the input data");
+            return;
+        }
 
         System.out.println("\nPlease insert how many word would you like to be created: ");
         Scanner input = new Scanner(System.in);
         int numberOfWords = input.nextInt();
         System.out.println();
-        for (int i = 0; i < numberOfWords; i++) {
+        for (int i = 0; i < numberOfWords; i++)
+        {
+            System.out.println("\nWORD number "+(i+1));
             String word = gramatica.generateWord();
             String status = gramatica.checkWord(word) ? "valid word" : "invalid word";
             System.out.println("Word number " + (i + 1) + " (" + status + "):   " + word);
-
-
         }
-
     }
 }

@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Gramatica {
@@ -99,7 +100,7 @@ public class Gramatica {
             System.out.println("Test case (1): VN intersectat cu VT = multimea vida. TEST PASSED");
         } else {
             validation = false;
-            System.out.println("Test case 1: (1) VN intersectat cu VT = multimea vida. TEST FAILED");
+            System.out.println("Test case (1): VN intersectat cu VT = multimea vida. TEST FAILED");
         }
 
         //test case 2
@@ -208,9 +209,12 @@ public class Gramatica {
 
         List<Rule> identicalInputRules = getIdenticalInputRules(start);
 
+
+
         Collections.shuffle(identicalInputRules);
         String text = identicalInputRules.get(0).getResult();
-
+        System.out.print("Prima regula gasita in text este: ("+start+"->"+text+")");
+        System.out.println(" => textul intermediar: "+ text);
         boolean noRulesFoundInText = false;
         int stepNumber = 1;
         while (noRulesFoundInText != true) {
@@ -221,6 +225,8 @@ public class Gramatica {
                     identicalInputRules = getIdenticalInputRules(rules.get(i).getInput());
                     Collections.shuffle(identicalInputRules);
                     text = text.replaceFirst(identicalInputRules.get(0).getInput(), identicalInputRules.get(0).getResult());
+                    System.out.print("Prima regula gasita in text este: ("+identicalInputRules.get(0).getInput()+"->"+identicalInputRules.get(0).getResult()+")");
+                    System.out.println(" => textul intermediar: "+ text);
 
                     noRulesFoundInText = false;
                     break;

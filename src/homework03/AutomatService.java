@@ -37,7 +37,8 @@ public class AutomatService {
         this.currentState = currentState;
     }
 
-    private Stare findState(String stringState) {
+    private Stare findState(String stringState)
+    {
         for (int i = 0; i < afd.getStareList().size(); i++) {
             if (afd.getStareList().get(i).getNameOfStare().equals(stringState)) {
                 return afd.getStareList().get(i);
@@ -70,10 +71,6 @@ public class AutomatService {
 
             System.out.println(currentState.getNameOfStare());
 
-            if (currentState.isStatusStare() && i < (word.length() - 1)) {
-                System.out.println("Blocaj! S-a ajuns intr-o stare finala, dar cuvantul " + word + " mai are litere neverificate");
-                return false;
-            }
         }
 
         if (currentState.isStatusStare()) {

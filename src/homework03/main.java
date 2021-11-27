@@ -59,7 +59,5 @@ public class main {
             System.out.println("\nDo you want to insert another text? ('y' to continue)");
             optiune = input.next();
         } while (optiune.equals("y"));
-
-
     }
 }

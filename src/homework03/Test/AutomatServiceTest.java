@@ -31,15 +31,6 @@ class AutomatServiceTest {
     }
 
     @Test
-    void checkBlocajInainteDeSfarsitulCuvantului() throws IOException {
-        AutomatFinitDeterminist afd = new AutomatFinitDeterminist();
-        afd.readData("automat01.txt");
-        AutomatService automatService = new AutomatService("q0", afd);
-        Boolean result = automatService.checkWord("1011001011");
-        assertEquals(false, result);
-    }
-
-    @Test
     void checkCuvantInvalid() throws IOException {
         AutomatFinitDeterminist afd = new AutomatFinitDeterminist();
         afd.readData("automat01.txt");
